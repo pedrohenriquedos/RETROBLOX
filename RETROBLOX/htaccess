@@ -1,0 +1,8 @@
+# Redireciona para a página de erro personalizada para erros 404, 403, 500, etc.
+ErrorDocument 404 /error.php?id=1
+ErrorDocument 403 /error.php?id=2
+ErrorDocument 500 /error.php?id=3
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !/maintenance\.php$
+RewriteRule ^(.*)$ /maintenance.php [R=302,L]
